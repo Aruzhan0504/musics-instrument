@@ -1,11 +1,14 @@
 package org.example.musicsinstrument.entity.base;
 
 import jakarta.persistence.*;
-
+import lombok.*;
 import java.time.Instant;
-@MappedSuperclass
 
+@Getter
+@Setter
+@MappedSuperclass
 public class BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID",nullable = false)
