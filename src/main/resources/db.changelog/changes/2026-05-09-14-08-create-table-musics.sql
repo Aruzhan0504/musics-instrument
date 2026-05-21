@@ -20,9 +20,9 @@ create table if not exists musics(
 alter table musics
 add constraint fk_music_brand foreign key (brand_id) references brand(id) on DELETE set null ;
     alter table musics
-    add constraint fk_music_category foreign key (category_id) references bitlab.public.category(id) on delete set null ;
+    add constraint fk_music_category foreign key (category_id) references category(id) on delete set null ;
 alter table musics
-add constraint fk_music_country foreign key (country_id) references bitlab.public.countries(id) on DELETE set null ;
+add constraint fk_music_country foreign key (country_id) references countries(id) on DELETE set null ;
 
 
 INSERT INTO musics (name, brand_id, model, category_id, country_id, material, price, description, created_at, updated_at)

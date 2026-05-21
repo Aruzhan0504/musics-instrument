@@ -1,0 +1,23 @@
+services:
+  backend:
+    image: 'musics-instrument'
+    container_name: java_backend
+    depends_on:
+      - database
+    environment:
+      - SERVER_PORT=8089
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=qwerty
+    ports:
+      - "8000:8089"
+
+  database:
+    image: 'postgres:17'
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - "4567:5432"
