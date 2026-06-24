@@ -1,12 +1,13 @@
 package org.example.musicsinstrument.mapper;
+import lombok.Builder;
 import org.example.musicsinstrument.dto.MusicCreateDto;
 import org.example.musicsinstrument.dto.MusicResponse;
 import org.example.musicsinstrument.entity.Music;
-import org.mapstruct.Builder;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
+
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
+import org.springframework.web.bind.annotation.Mapping;
 
 import java.util.List;
 

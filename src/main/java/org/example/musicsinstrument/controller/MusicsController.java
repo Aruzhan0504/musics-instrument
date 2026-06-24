@@ -41,6 +41,9 @@ public class MusicsController {
     public ResponseEntity<MusicResponse> updateMusicsInstrument(@Valid @RequestBody MusicUpdateDto dto){
         return ResponseEntity.status(200).body(musicService.updateMusic(dto));
     }
-
+    @GetMapping("/{id}")
+    public ResponseEntity<MusicResponse> getMusicById(@PathVariable Long id){
+        return ResponseEntity.status(200).body(musicService.getMusicById(id));
+    }
 
 }

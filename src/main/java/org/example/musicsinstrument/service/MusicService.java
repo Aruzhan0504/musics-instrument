@@ -60,6 +60,10 @@ public class MusicService {
         return musicMapper.todto(music);
     }
 
+    public MusicResponse getMusicById(Long id) {
+
+    }
+
 //    public void deleteMusic(Long id) {
 //       musicRepository.deleteById(id);
 //    }
