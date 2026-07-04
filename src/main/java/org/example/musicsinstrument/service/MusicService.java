@@ -1,5 +1,6 @@
 package org.example.musicsinstrument.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.musicsinstrument.dto.MusicCreateDto;
 import org.example.musicsinstrument.dto.MusicResponse;
@@ -61,7 +62,8 @@ public class MusicService {
     }
 
     public MusicResponse getMusicById(Long id) {
-
+        Music music = musicRepository.findById(id).orElseThrow(()-> new RuntimeException("Music with id " + id + " not found"));
+        return musicMapper.todto(music);
     }
 
 //    public void deleteMusic(Long id) {

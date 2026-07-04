@@ -32,18 +32,26 @@ public class MusicsController {
     public ResponseEntity<MusicResponse> addMusicsInstrument(@Valid @RequestBody MusicCreateDto dto){
         return ResponseEntity.status(201).body(musicService.addMusic(dto));
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMusicInstrument(@PathVariable Long id){
         musicRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
     @PutMapping
     public ResponseEntity<MusicResponse> updateMusicsInstrument(@Valid @RequestBody MusicUpdateDto dto){
         return ResponseEntity.status(200).body(musicService.updateMusic(dto));
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<MusicResponse> getMusicById(@PathVariable Long id){
         return ResponseEntity.status(200).body(musicService.getMusicById(id));
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "GET работает";
     }
 
 }
